@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:diary_project/loginPage/loginPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Diary Online"),
         ),
+        body: LoginPage(),
       ),
     );
   }

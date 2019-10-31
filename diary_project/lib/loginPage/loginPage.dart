@@ -4,12 +4,24 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/diary.jpg")
-        )
-      ),
-      child:Text("hello"),
-    );
+          width: double.infinity,
+          height: double.infinity,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              colorFilter: ColorFilter.linearToSrgbGamma(),
+              image: AssetImage("images/diary.jpg")
+            )
+          ),
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center ,
+            children: <Widget>[
+              
+            ],
+          ),
+        );
+      
   }
 }

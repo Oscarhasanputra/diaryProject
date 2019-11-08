@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget{
+  @override
+  _LoginPage createState(){
+    return _LoginPage();
+  }
+}
+
+class _LoginPage extends State<LoginPage> {
+  final emailText= TextEditingController();
+  final password= TextEditingController();
+  final auth=FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,6 +34,10 @@ class LoginPage extends StatelessWidget {
                   padding: EdgeInsets.all(10.00),
                   width: MediaQuery.of(context).size.width * 0.7,
                   child: TextField(
+                    controller: emailText,
+                    onSubmitted: (data){
+                      
+                    },
                     decoration: InputDecoration(
                       labelStyle: TextStyle(
                         fontSize: 30.0,
@@ -46,6 +61,8 @@ class LoginPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.7,
                   child: TextField(
                     obscureText: true,
+                    controller: password,
+                    onSubmitted: login,
                     decoration: InputDecoration(
                       labelStyle: TextStyle(
                         fontSize: 30.0,
@@ -67,5 +84,15 @@ class LoginPage extends StatelessWidget {
           ),
         );
       
+  }
+
+  Future<void> login(data) async{
+    
+    auth.signInWithEmailAndPassword(email: emailText.text,password: data);
+    final test=await auth.currentUser();
+      if(test is FirebaseUser)
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return 
+        }));
   }
 }

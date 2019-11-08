@@ -18,7 +18,51 @@ class LoginPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center ,
             children: <Widget>[
-              
+              Form(
+                child: Container(
+                  padding: EdgeInsets.all(10.00),
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelStyle: TextStyle(
+                        fontSize: 30.0,
+                        decorationColor: Colors.black
+                      ),
+                      labelText: "Email",
+
+                      border:UnderlineInputBorder(borderSide: BorderSide(
+                        color: Colors.black,
+                        style: BorderStyle.solid,
+                        width: 100.0,
+                      )),
+                      
+                    ),
+                  ),
+                ),
+              ),
+              Form(
+                child: Container(
+                  padding: EdgeInsets.all(10.00),
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelStyle: TextStyle(
+                        fontSize: 30.0,
+                        decorationColor: Colors.black
+                      ),
+                      labelText: "Password",
+
+                      border:UnderlineInputBorder(borderSide: BorderSide(
+                        color: Colors.black,
+                        style: BorderStyle.solid,
+                        width: 100.0,
+                      )),
+                      
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         );

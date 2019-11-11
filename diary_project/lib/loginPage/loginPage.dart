@@ -1,5 +1,7 @@
+import 'package:diary_project/menu/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:diary_project/menu/menu.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -90,9 +92,10 @@ class _LoginPage extends State<LoginPage> {
     
     auth.signInWithEmailAndPassword(email: emailText.text,password: data);
     final test=await auth.currentUser();
+    
       if(test is FirebaseUser)
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return 
+          return Menu();
         }));
   }
 }
